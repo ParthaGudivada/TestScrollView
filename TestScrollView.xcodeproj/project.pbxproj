@@ -12,6 +12,7 @@
 		AC9BE25F1B17B5C4004C51D1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC9BE25E1B17B5C4004C51D1 /* Images.xcassets */; };
 		AC9BE2621B17B5C4004C51D1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9BE2601B17B5C4004C51D1 /* LaunchScreen.xib */; };
 		AC9BE26E1B17B5C5004C51D1 /* TestScrollViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9BE26D1B17B5C5004C51D1 /* TestScrollViewTests.swift */; };
+		AC9BE2781B17B5E4004C51D1 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9BE2771B17B5E4004C51D1 /* ScrollViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		AC9BE2671B17B5C5004C51D1 /* TestScrollViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestScrollViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9BE26C1B17B5C5004C51D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC9BE26D1B17B5C5004C51D1 /* TestScrollViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScrollViewTests.swift; sourceTree = "<group>"; };
+		AC9BE2771B17B5E4004C51D1 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				AC9BE2601B17B5C4004C51D1 /* LaunchScreen.xib */,
 				AC9BE25B1B17B5C4004C51D1 /* TestScrollView.xcdatamodeld */,
 				AC9BE2571B17B5C4004C51D1 /* Supporting Files */,
+				AC9BE2771B17B5E4004C51D1 /* ScrollViewController.swift */,
 			);
 			path = TestScrollView;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC9BE25A1B17B5C4004C51D1 /* AppDelegate.swift in Sources */,
+				AC9BE2781B17B5E4004C51D1 /* ScrollViewController.swift in Sources */,
 				AC9BE25D1B17B5C4004C51D1 /* TestScrollView.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +334,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TestScrollView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -340,6 +345,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TestScrollView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -399,6 +405,7 @@
 				AC9BE2731B17B5C5004C51D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC9BE2741B17B5C5004C51D1 /* Build configuration list for PBXNativeTarget "TestScrollViewTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +414,7 @@
 				AC9BE2761B17B5C5004C51D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
