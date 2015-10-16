@@ -32,22 +32,9 @@ class ScrollViewController: UIViewController
     {
         super.viewDidLoad()
         
-        let custButton  = {(btnName : String, normalColor : UIColor, disabledColor : UIColor, normalFont : UIFont, view : UIView) -> UIButton in
-            let baseButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-            baseButton.setTranslatesAutoresizingMaskIntoConstraints(false)
-            view.addSubview(baseButton)
-            baseButton.setTitle(btnName, forState: UIControlState.Normal)
-            baseButton.setTitleColor(normalColor, forState: UIControlState.Normal)
-            baseButton.setTitleColor(disabledColor, forState: UIControlState.Disabled)
-            baseButton.titleLabel?.textAlignment = NSTextAlignment.Center
-            baseButton.contentVerticalAlignment = UIControlContentVerticalAlignment.Center
-            baseButton.titleLabel?.font = normalFont
-            return baseButton
-        }
-        
-        let custLabel   = {(lblName : String, view : UIView ) -> UILabel in
+       let custLabel   = {(lblName : String, view : UIView ) -> UILabel in
             let lbl = UILabel()
-            lbl.setTranslatesAutoresizingMaskIntoConstraints(false)
+            lbl.translatesAutoresizingMaskIntoConstraints = false
             lbl.font = UIFont(name: "Verdana", size: 12.0)
             view.addSubview(lbl)
             lbl.text = lblName
@@ -57,7 +44,7 @@ class ScrollViewController: UIViewController
         
         let custTextField   = {[weak weakSelf = self](txtValue : String, view : UIView ) -> UITextField in
             let txt = UITextField()
-            txt.setTranslatesAutoresizingMaskIntoConstraints(false)
+            txt.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview(txt)
             txt.placeholder = txtValue
             txt.borderStyle = UITextBorderStyle.RoundedRect
@@ -65,25 +52,17 @@ class ScrollViewController: UIViewController
             txt.delegate = weakSelf
             return txt
         }
-        
-        let custImageView   = {( image : String, view : UIView) -> UIImageView in
-            let iv = UIImageView()
-            iv.image = UIImage(named: image)
-            iv.setTranslatesAutoresizingMaskIntoConstraints(false)
-            view.addSubview(iv)
-            return iv
-        }
-
+       
         self.view.backgroundColor = UIColor.blueColor()
         self.scrollView = UIScrollView(frame: CGRectZero)
-        self.scrollView!.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.scrollView!.translatesAutoresizingMaskIntoConstraints = false
         self.scrollView!.backgroundColor = UIColor.yellowColor()
         self.scrollView!.userInteractionEnabled = true
         self.view.addSubview(scrollView!)
   
      
         self.contentView = UIView(frame: CGRectZero)
-        self.contentView!.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.contentView!.translatesAutoresizingMaskIntoConstraints = false
         self.contentView!.backgroundColor = UIColor.lightGrayColor()
         self.scrollView!.addSubview(self.contentView!)
         
@@ -107,12 +86,12 @@ class ScrollViewController: UIViewController
         let metricsDict = ["lblWidth" : Int(90), "txtWidth" : 200, "height" : Int(30), "hSpace" : Int(5), "vSpace" : Int(40), "topOffset" : Int(20), "contentHeight" : Int(600)]
         
         
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[scrollView]|", options: NSLayoutFormatOptions.allZeros, metrics: metricsDict, views: viewsDict))
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[scrollView]|", options: NSLayoutFormatOptions.allZeros, metrics: metricsDict, views: viewsDict))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[scrollView]|", options: NSLayoutFormatOptions(), metrics: metricsDict, views: viewsDict))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[scrollView]|", options: NSLayoutFormatOptions(), metrics: metricsDict, views: viewsDict))
         
         
-        self.scrollView!.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[contentView]|", options: NSLayoutFormatOptions.allZeros, metrics: metricsDict, views: viewsDict))
-        self.scrollView!.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[contentView(==contentHeight)]|", options: NSLayoutFormatOptions.allZeros, metrics: metricsDict, views: viewsDict))
+        self.scrollView!.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[contentView]|", options: NSLayoutFormatOptions(), metrics: metricsDict, views: viewsDict))
+        self.scrollView!.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[contentView(==contentHeight)]|", options: NSLayoutFormatOptions(), metrics: metricsDict, views: viewsDict))
         
         self.view.addConstraint(NSLayoutConstraint(item: self.contentView! , attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Trailing, multiplier: 1.0, constant: 0.0))
         self.view.addConstraint(NSLayoutConstraint(item: self.contentView! , attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Leading, multiplier: 1.0, constant: 0.0))
@@ -149,7 +128,7 @@ class ScrollViewController: UIViewController
     {
         if let info = notification.userInfo
         {
-            if var kbRect = info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue()
+            if var kbRect = info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue
             {
                 kbRect = self.view.convertRect(kbRect, fromView: nil)
                 
